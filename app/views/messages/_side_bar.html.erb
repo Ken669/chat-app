@@ -6,22 +6,19 @@
     </div>
 
     <div class="new-room">
-      <a href="#">new room</a>
+      <%= link_to 'new room', new_room_path %>
     </div>
   </div>
 
   <div class="side-body">
-  
-    <div class="room">
-      <div class="room-name">
-        <a href="#">techroom1</a>
+    <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <a href="#">
+            <%= room.name %>
+          </a>
+        </div>
       </div>
-    </div>
-
-    <div class="room">
-      <div class="room-name">
-        <a href="#">techroom2</a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
