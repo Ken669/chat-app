@@ -7,22 +7,7 @@
   </div>
   
   <div class="main-body">
-
-    <div class="message-box">
-      <div class="name-time">
-        <p class="posted-by">Tom</p>
-        <p class="posted-at">1234/12/23</p>
-      </div>
-      <p class="message">hello</p>
-    </div>
-
-    <div class="message-box">
-      <div class="name-time">
-        <p class="posted-by">Sim</p>
-        <p class="posted-at">1234/12/23</p>
-      </div>
-      <p class="message">hello</p>
-    </div>
+    <%= render partial: 'message', collection: @messages %>
   </div>
 
   <div class="main-bottom">
