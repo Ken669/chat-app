@@ -4,7 +4,7 @@
       <%= @room.name %>
     </p>
     <div class="destroy-btn">
-      <a href="#">destroy</a>
+      <%= link_to 'destroy', room_path(@room), method: :delete %>
     </div>
   </div>
   
