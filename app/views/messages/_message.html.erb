@@ -1,0 +1,13 @@
+<div class="message-box">
+  <div class="name-time">
+    <p class="posted-by">
+      <%= message.user.name %>
+    </p>
+    <p class="posted-at">
+      <%= l message.created_at %>
+    </p>
+  </div>
+  <p class="message">
+    <%= message.content %>
+  </p>
+</div>
