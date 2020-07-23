@@ -3,7 +3,9 @@ class MessagesController < ApplicationController
     @room = Room.find(params[:room_id])
     @message = Message.new
     @messages = @room.messages.includes(:user)
-    # binding.pry
+    # @messages.each do |message|
+    #   binding.pry
+    # end
   end
 
   def create
@@ -12,6 +14,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to room_messages_path(@room)
     else
+      binding.pry
       render :index
     end
   end
