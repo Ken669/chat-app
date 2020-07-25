@@ -122,11 +122,15 @@ RSpec.describe "チャットールームの削除機能", type: :system do
     click_on(@room_user.room.name)
 
     # メッセージ情報を3つDBに追加する
-    3.times do
-      msg = Faker::Lorem.sentence
-      fill_in 'message_content', with: msg
-      click_on('send')
-    end
+    # 3.times do
+    #   msg = Faker::Lorem.sentence
+    #   fill_in 'message_content', with: msg
+    #   click_on('send')
+    # end
+    FactoryBot.create_list(
+      :message, 3, room_id: @room_user.room.id, user_id: @room_user.user.id
+    )
+    expect(Message.count).to eq 3
 
     # 「チャットを終了する」ボタンをクリックすることで、作成した5つのメッセージが削除されていることを期待する
     click_on('destroy')
